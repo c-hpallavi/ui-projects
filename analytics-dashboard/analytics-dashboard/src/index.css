@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root, [data-theme="light"] {
+  --bg: #f3f5f8; --surface: #ffffff; --ink: #0f172a; --muted: #5b6475; --line: #e0e4eb;
+  --accent: #c2570c; --accent-soft: #fdebd9; --ok: #0f7b4f; --warn: #a16207; --bad: #b42318;
+}
+[data-theme="dark"] {
+  --bg: #0d1117; --surface: #161b22; --ink: #e6edf3; --muted: #9aa4b2; --line: #2a313c;
+  --accent: #f59e4b; --accent-soft: #3a2a17; --ok: #4ade80; --warn: #facc15; --bad: #f87171;
+}
+
+@theme inline {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "DM Serif Display", serif;
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-ink: var(--ink);
+  --color-muted: var(--muted); --color-line: var(--line); --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft); --color-ok: var(--ok); --color-warn: var(--warn); --color-bad: var(--bad);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+:where(button, input, select, a, th button):focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.skeleton { background: linear-gradient(90deg, var(--line) 25%, var(--surface) 50%, var(--line) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 0.4rem; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
