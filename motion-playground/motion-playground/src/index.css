@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Familjen Grotesk", system-ui, sans-serif;
+  --color-lilac: #e7e3ff;
+  --color-ink: #191530;
+  --color-tomato: #ff5a4d;
+  --color-sun: #ffc83d;
+  --color-mint: #3ddbb0;
+}
+
+body { background: var(--color-lilac); color: var(--color-ink); font-family: var(--font-sans); }
+:where(button, a, [tabindex]):focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; }
+.tile { border: 2px solid var(--color-ink); border-radius: 1.25rem; background: #fff; box-shadow: 5px 5px 0 var(--color-ink); }
