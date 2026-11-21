@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-mist: #eef2f1;
+  --color-ink: #14211f;
+  --color-soft: #4f6360;
+  --color-edge: #cfdad8;
+  --color-teal: #0f766e;
+  --color-teal-deep: #0b5a54;
+}
+
+body { background: var(--color-mist); color: var(--color-ink); font-family: var(--font-sans); }
+:where(button, textarea, a):focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+
+/* Blinking caret while a reply is streaming */
+.streaming-caret::after {
+  content: "";
+  display: inline-block;
+  width: 0.5ch; height: 1.1em;
+  margin-left: 2px; vertical-align: text-bottom;
+  background: var(--color-teal);
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.prose-chat p { margin: 0 0 0.75rem; line-height: 1.65; }
+.prose-chat ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.prose-chat ol { list-style: decimal; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.prose-chat li { margin: 0.2rem 0; }
+.prose-chat h3 { font-weight: 800; margin: 1rem 0 0.4rem; }
+.prose-chat code:not(pre code) { background: #dfe9e7; padding: 0.1rem 0.35rem; border-radius: 0.3rem; font-family: var(--font-mono); font-size: 0.875em; }
+.prose-chat table { border-collapse: collapse; margin-bottom: 0.75rem; font-size: 0.9rem; }
+.prose-chat th, .prose-chat td { border: 1px solid var(--color-edge); padding: 0.35rem 0.7rem; text-align: left; }
+
+@media (prefers-reduced-motion: reduce) { .streaming-caret::after { animation: none; } }
