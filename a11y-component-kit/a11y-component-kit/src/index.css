@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --color-paper: #f6f7fb;
+  --color-ink: #1b1f3b;
+  --color-muted: #55597a;
+  --color-line: #d9dcec;
+  --color-accent: #4c3fe0;
+  --color-accent-deep: #3a2fb8;
+  --color-focus: #f5a524;
+}
+
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); }
+
+/* One focus style for the whole kit: thick, high-contrast, never removed. */
+:where(button, a, input, [role="tab"], [role="option"], [role="switch"]):focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
