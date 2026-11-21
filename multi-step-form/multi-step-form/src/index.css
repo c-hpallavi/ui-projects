@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Nunito Sans", system-ui, sans-serif;
+  --color-plum: #2b1b2e;
+  --color-petal: #faf5f9;
+  --color-orchid: #b4236c;
+  --color-orchid-deep: #8f1a55;
+  --color-hush: #6b5a70;
+  --color-rule: #e6d8e4;
+  --color-danger: #b42318;
+}
+
+body { background: var(--color-petal); color: var(--color-plum); font-family: var(--font-sans); }
+:where(input, select, textarea, button, a):focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
